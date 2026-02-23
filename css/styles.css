@@ -13,9 +13,10 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 24px;
-    background-color: white;
+    min-height: 60px;
+    background-color: rgb(107, 85, 85);
     padding: 10px;
+    position: relative;
     border-bottom: 1px solid #FFB3C6;
     font-family: cursive;
     z-index: 999;
@@ -25,11 +26,49 @@ header a{
     color:black;
     text-decoration: none;
 }
-ul{
+.nav-items ul{
     list-style: none;
     display: flex;
     gap: 10px;
     cursor: pointer;
+}
+.nav-items{
+    display: flex;
+    align-items: center;
+    gap:2rem;
+}
+
+.hamburger-menu{
+    display: none;
+}
+
+
+/* hidden by default */
+#mobile-nav {
+  display: none;
+}
+
+/* visible state */
+#mobile-nav.active {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  position: absolute;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  background: rgba(0,109,170,0.9);
+  backdrop-filter: blur(4px);
+  padding: 20px 0;
+}
+
+#mobile-nav.active a {
+  color: white;
+  font-size: 24px;
+}
+.hamburger-menu svg{
+    pointer-events:none;
 }
 .hero{
     background-color:#FFE5EC ;
@@ -196,9 +235,6 @@ p{
 a:hover{
     color:aquamarine
 }
-.hamburger-menu{
-    display:none;
-}
 footer{
     margin-bottom: 0;
     background-color:#FFC2D1;
@@ -226,8 +262,52 @@ footer .legal{
 footer .socials {
     padding-top: 8px;
 }
+/* modal overlay */
+.hire-confirmation {
+    display: none;           /* hidden by default */
+    position: fixed;
+    inset: 0;                /* top:0; bottom:0; left:0; right:0 */
+    background-color: rgba(3, 83, 164, 0.9);
+    backdrop-filter: blur(4px);
+    justify-content: center; /* center horizontally */
+    align-items: center;     /* center vertically */
+    z-index: 1000;
+    padding: 20px;
+}
+
+/* modal content */
+.hire-confirmation .message {
+    background-color: #006DAA;
+    border-radius: 8px;
+    padding: 20px;
+    font-family: 'Dancing Script', cursive;
+    width: 50%;              /* half of viewport width */
+    max-width: 500px;        /* optional max width */
+    min-width: 300px;        /* optional min width */
+    box-sizing: border-box;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+button{
+    border-radius: 8px;
+    border: none;
+    padding: 8px;
+    font-family: 'dancingSript', cursive;
+    cursor: pointer;
+    background-color: #B9D6F2;
+}
+
+.message h3,p{
+    color: #ffffff;
+}
 
 @media screen and (max-width:480px) {
+    
     .about-text{
         margin: 16px;
     }
@@ -244,10 +324,9 @@ footer .socials {
     }
     .hamburger-menu{
         display: block;
+        cursor: pointer;
     }
-    .hello-main header ul{
-        display: none;
-    }
+   
     .text span{
         background-color: transparent;
         text-decoration: line-through;
@@ -262,10 +341,16 @@ footer .socials {
     .text-content{
         padding-left: 16px;
     }
-footer{
+    footer{
     padding:6px;
-}
-.text .social-handles{
+    }
+    .text .social-handles{
     padding: 16px 0 16px 0;
-}
+    }
+    .message{
+        min-width: 350px;
+    }
+    form{
+        width: 70%;
+    }
 }

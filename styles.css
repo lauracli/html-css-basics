@@ -227,6 +227,46 @@ footer .socials {
     padding-top: 8px;
 }
 
+.hire-confirmation{
+    background-color: rgb(3, 83, 164, o.9);
+    backdrop-filter: blur(4px);
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    inset: 0;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease-in-out;
+    display: none;
+}
+.message{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #006DAA;
+    border-radius: 8px;
+    padding: 10px 10px 20px 10px;
+    font-family: 'dancingSript', cursive;
+    width: 30%;
+}
+button{
+    border-radius: 8px;
+    border: none;
+    padding: 8px;
+    font-family: 'dancingSript', cursive;
+    cursor: pointer;
+    background-color: #B9D6F2;
+}
+.button-div{
+    display: flex;
+    gap: 100px;
+    margin-top: 10px;
+}
+.message h3,p{
+    color: #ffffff;
+}
+
 @media screen and (max-width:480px) {
     .about-text{
         margin: 16px;

@@ -3,21 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
+    <title>My Portfolio</title>
+<link rel="stylesheet" href="styles.css?v=123" /> 
+ </head>
   <body>
     <main class="hello-main">
       <header>
         <h1>lorah</h1>
-        <ul>
-          <li>Home</li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="project.html">Project</a></li>
-          <li><a href="testimonials.html">Testimonials</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-        <div class="hamburger-menu"></div>
+        <div class="nav-items">
+          <ul id="mobile-nav">
+            <li><a href="#">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="project.html">Project</a></li>
+            <li><a href="testimonials.html">Testimonials</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="hamburger-menu">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             x="0px"
@@ -79,7 +81,7 @@
                 </p>
               </div>
 
-              <div>
+              <div class="application-buttons">
                 <button>Hire me</button>
                 <button>Download CV</button>
               </div>
@@ -155,12 +157,12 @@
 
           <ul>
             <li><h3>Links</h3></li>
-          <li><a href="">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="project.html">Project</a></li>
-          <li><a href="testimonials.html">Testimonials</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
+            <li><a href="">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="project.html">Project</a></li>
+            <li><a href="testimonials.html">Testimonials</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
         <div class="legal">
   
           <ul>
@@ -171,6 +173,29 @@
         </div>
 
       </footer>
+
+          <!--hire confirmation modal-->
+    <div class="hire-confirmation">
+      <div class="message" style="min-width:450px; height: 350px; display: flex; flex-direction: column;">
+        <p id="error" style="color:red;"></p>
+        <form id="formId" style="display: flex; flex-direction: column; gap: 10px; width: 80%;  margin-right: 5%;">
+          <input type="text" id="text" placeholder="Enter your name" required style="outline: none; border-radius:8px; padding:12px;border: none; width: 100%;"/>
+          <input type="text" id="phone_number" placeholder="Enter your phone number" required style="outline: none; border-radius:8px; padding: 12px;border: none; width: 100%;"/>
+          <input type="email" id="email" placeholder="Enter email" required style="outline: none; border-radius: 8px; padding: 12px;border: none; width: 100%;"/>
+          <textarea id="text_area" style="outline: none; border-radius: 8px; padding: 14px; width: 100%; height: 80px;"></textarea>
+        </form>
+        <div class="button-div" style="margin-top: 10px; display: flex; justify-content: space-between; width: 80%;">
+          <button>Cancel</button>
+          <button id="hire-button">Hire me</button>
+        </div>
+
+        </div>
+      </div>
+    </div>
+
     </main>
+
+  <script src="index.js"></script>
+
   </body>
 </html>
